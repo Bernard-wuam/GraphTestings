@@ -2,6 +2,19 @@
 
 
 template<typename N, typename W>
+void ADjacencyListGraph<N, W>::deepFirst(const N & node, std::unordered_set<N>& visited) const
+{
+  std::cout << node <<"->";
+  visited.insert (node);
+  for(auto c : adjacencyGraph.at(node)){
+    auto nodeOfWeight = std::get<0>(c);
+    auto isVisited = visited.find(nodeOfWeight);
+    if(isVisited == visited.end()) deepFirst (nodeOfWeight,visited);
+  }
+  std::cout << "" << std::endl;
+}
+
+template<typename N, typename W>
 ADjacencyListGraph<N, W>::ADjacencyListGraph()
 {}
 
@@ -31,8 +44,6 @@ ADjacencyListGraph<N, W>::ADjacencyListGraph(std::initializer_list<std::pair<N, 
       if (v == adjacencyGraph.end()) adjacencyGraph[nodeName] = {};
     }
   }
-
-
 }
 
 template<typename N, typename W>
@@ -82,6 +93,21 @@ void ADjacencyListGraph<N, W>::breathFirstTransversal() const
 
       }
       std::cout << "" << std::endl;
+    }
+  }
+}
+
+template<typename N, typename W>
+void ADjacencyListGraph<N, W>::deepFirstTransversal() const
+{
+  std::unordered_set<N> visited;
+
+  for(const auto& [mapKey,val]: adjacencyGraph){
+    auto isVisited = visited.find(mapKey);
+
+    if(isVisited == visited.end ()){
+      //call the deepFirstMethod
+      deepFirst (mapKey,visited);
     }
   }
 }

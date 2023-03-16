@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
     {'C',{{'B',34}}},
     {'F',{{'B',34}}}
   };
-  ad.breathFirstTransversal ();
+  //ad.breathFirstTransversal ();
+  ad.deepFirstTransversal ();
   return a.exec();
 }
