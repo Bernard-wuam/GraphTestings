@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
@@ -74,3 +75,11 @@ CMakeLists.txt.user*
 
 CMakeLists.txt 
 main.cpp 
+=======
+Debug/
+Souce.cpp
+graphProject.vcxproj
+graphProject.vcxproj.filters
+graphProject.vcxproj.user
+Source.cpp
+>>>>>>> ca46051a55d2ec09c21f49ec120a9a51c2712ee3
