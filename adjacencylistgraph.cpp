@@ -11,7 +11,6 @@ void ADjacencyListGraph<N, W>::deepFirst(const N & node, std::unordered_set<N>& 
     auto isVisited = visited.find(nodeOfWeight);
     if(isVisited == visited.end()) deepFirst (nodeOfWeight,visited);
   }
-  std::cout << "" << std::endl;
 }
 
 template<typename N, typename W>
