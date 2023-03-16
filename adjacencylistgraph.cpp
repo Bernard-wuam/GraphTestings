@@ -100,7 +100,7 @@ template<typename N, typename W>
 void ADjacencyListGraph<N, W>::deepFirstTransversal() const
 {
   std::unordered_set<N> visited;
-
+  std::cout << "called..";
   for(const auto& [mapKey,val]: adjacencyGraph){
     auto isVisited = visited.find(mapKey);
 
